@@ -8,7 +8,10 @@ GWAS using ddRAD and WGS in combination with female preference data
 
 ## 1.RawDatatoVariants.md
 
-Call variants for ddRAD samples after mapping to the new Sanger genome. 
+1.1 Call variants for ddRAD samples after mapping to the new Sanger genome. 
+
+1.2 Call variants for NBAF whole genome sequenced samples after mapping to the new Sanger genome
+
 
 
 ## 2.SNPFiltering.md
