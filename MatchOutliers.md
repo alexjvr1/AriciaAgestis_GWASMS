@@ -27,6 +27,12 @@ WHOLE and NEW
 13:16000481
 ```
 
+Find the RG name for these loci in the WGS bam files for two individuals: 
+```
+module load apps/samtools-1.9
+
+for i in $(ls *bam); do samtools view $i | grep "SUPER_5  15949799"; done
+```
 
 ### MS1 outliers
 
