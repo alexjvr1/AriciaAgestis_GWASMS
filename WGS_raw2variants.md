@@ -25,9 +25,26 @@ Sorted bam files need to be indexed for bcftools/samtools mpileup. But I'm getti
 
 ```
 
-To check the bam file I'm using Picard tools on the UoB server. 
+To check the bam file I'm using Picard tools on the UoB server. See Picard Tools [here](http://broadinstitute.github.io/picard/command-line-overview.html#ValidateSamFile)
 ```
+/newhome/aj18951/1a_Aricia_agestis_WGS_RawData_Oct2019/mapped.WGS
+
 module load apps/picard-2.20.0
 
 java -jar /cm/shared/apps/Picard-2.20.0/picard.jar
+
+java -jar /cm/shared/apps/Picard-2.20.0/picard.jar ValidateSamFile \
+      I=input.bam \
+      MODE=SUMMARY
+      
+##FINDS missing READ Group information in the Bam files
+## HISTOGRAM	java.lang.String
+Error Type	Count
+ERROR:MISSING_READ_GROUP	1
+WARNING:RECORD_MISSING_READ_GROUP	76318571
 ```
+
+If this is a problem downstream we can add RG infmation using Picard tools's [AddOrReplaceReadGroups tool](https://gatk.broadinstitute.org/hc/en-us/articles/360035532352-Errors-about-read-group-RG-information)
+
+
+
