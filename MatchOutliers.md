@@ -19,13 +19,15 @@ This model seemed to run better than the continious model from his initial tests
 
 Match the loci identified by GWAS back to the de novo loci from MS1
 
-WHOLE and NEW
+Loci identified by WHOLE and NEW
 ```
 5:15949799 (NEW)
 5:15949872 (WHOLE)
 7:18293176
 13:16000481
 ```
+
+We have to find the RG name for some reads that mapped to this position on the Ref Genome. Then we can check on the de novo assembly reads to see where those loci mapped and cross reference. 
 
 Find the RG name for these loci in the WGS bam files for two individuals: 
 ```
