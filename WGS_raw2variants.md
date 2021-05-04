@@ -15,36 +15,37 @@ The samples have been sequenced to really high coverage, so there are 4 fastq.gz
 
 I'm mapping each of these separately and then joining the sorted bam files together. 
 
-```
-Where? and code
-```
-
-Sorted bam files need to be indexed for bcftools/samtools mpileup. But I'm getting an error: 
+1. Mapping script [here](https://github.com/alexjvr1/AriciaAgestis_GWASMS/blob/main/MapToGenome_WGS_ARRAY.sh)
 
 ```
+#On BlueCrystal aj18951
+#For each sample e.g. 
+
+/newhome/aj18951/1a_Aricia_agestis_WGS_RawData_Oct2019/transfer.genomics.ed.ac.uk/11696_Bridle_Jon/raw_data/20191025/BAR_1_2013
 
 ```
 
-To check the bam file I'm using Picard tools on the UoB server. See Picard Tools [here](http://broadinstitute.github.io/picard/command-line-overview.html#ValidateSamFile)
+2. Bam files need to be sorted before I can merge them. Used [this script](https://github.com/alexjvr1/AriciaAgestis_GWASMS/blob/main/WGS.Bam.sort.sh). 
+
+3. Concatenate the bam files using this [script](https://github.com/alexjvr1/AriciaAgestis_GWASMS/blob/main/WGS.Bam.merge.sh) 
+
+4. Concatenated bam files were transferred to a mapped folder: 
 ```
 /newhome/aj18951/1a_Aricia_agestis_WGS_RawData_Oct2019/mapped.WGS
-
-module load apps/picard-2.20.0
-
-java -jar /cm/shared/apps/Picard-2.20.0/picard.jar
-
-java -jar /cm/shared/apps/Picard-2.20.0/picard.jar ValidateSamFile \
-      I=input.bam \
-      MODE=SUMMARY
-      
-##FINDS missing READ Group information in the Bam files
-## HISTOGRAM	java.lang.String
-Error Type	Count
-ERROR:MISSING_READ_GROUP	1
-WARNING:RECORD_MISSING_READ_GROUP	76318571
 ```
 
-If this is a problem downstream we can add RG infmation using Picard tools's [AddOrReplaceReadGroups tool](https://gatk.broadinstitute.org/hc/en-us/articles/360035532352-Errors-about-read-group-RG-information)
+5. Index the sorted and merged bam files before we can do variant calling. Used [this script](https://github.com/alexjvr1/AriciaAgestis_GWASMS/blob/main/Index.ARRAY.sh).
+
+6. Create variant calling script using [this script](https://github.com/alexjvr1/AriciaAgestis_GWASMS/blob/main/03a_variant_calling_bluecp3.WGS.sh):
+
+```
+./03a_variant_calling_bluecp3.WGS.sh
+```
+And call variants. 
+
+
+
+
 
 
 
