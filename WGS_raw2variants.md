@@ -41,9 +41,16 @@ I'm mapping each of these separately and then joining the sorted bam files toget
 ```
 ./03a_variant_calling_bluecp3.WGS.sh
 ```
-And call variants. 
+And call variants with the created [script](https://github.com/alexjvr1/AriciaAgestis_GWASMS/blob/main/var_calling.20210426-214650.smsjob.sh)
 
+* Sometimes jobs stall and run out of wall time. Check all the log files for numbers of variants called. Jobs that have failed will have an error message and can be rerun. 
 
+7. Concatenate all the bcf files
+
+```
+/newhome/aj18951/1a_Aricia_agestis_WGS_RawData_Oct2019/03_variants.WGS
+
+```
 
 
 
