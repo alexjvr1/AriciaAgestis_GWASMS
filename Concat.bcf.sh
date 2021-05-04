@@ -8,9 +8,18 @@
 # outputs a raw combined variant file (.bcf) and a filtered file (.bcf) in the input folder. 
 # Runs in a few minutes in the home directory (don't need to submit to Blue Crystal). 
 
+#!/bin/bash
+#PBS -N 03b_AA.NBAF
+#PBS -l nodes=1:ppn=1
+#PBS -l mem=16gb
+#PBS -l walltime=10:00:00
+#PBS -j oe
+##PBS -t 1-2
+#PBS -o /newhome/aj18951/1a_Aricia_agestis_WGS_RawData_Oct2019/03_variants.WGS/Concat1.smsjob.log
+
 
 ##Specify resources
-#PBS -N 03b_AA.NBAF error and output files (with prefix job1)
+##PBS -N 03b_AA.NBAF error and output files (with prefix job1)
 
 ##Load modules
 module load apps/bcftools-1.8
@@ -19,5 +28,5 @@ module load apps/bcftools-1.8
 ##Work in current directory
 cd $PBS_O_WORKDIR 
 
-bcftools concat -O b -a -d none -f 03_variants/bcflist.batch2 --threads 1  > 03_variants/OUTF.b.batch02.bcf
-bcftools index 03_variants/OUTF.b.batch02.bcf
+bcftools concat -O b -a -d none -f bcflist.batch2 --threads 1  > OUTF.b.batch02.bcf
+bcftools index OUTF.b.batch02.bcf
