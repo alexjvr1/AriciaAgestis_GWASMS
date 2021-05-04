@@ -67,6 +67,8 @@ du -chs *WGS*gz
 ```
 
 
+Concatenate the ddRAD and WGS datasets as described [here](https://github.com/alexjvr1/AriciaAgestis_GWASMS/blob/main/Intersect_ddRAD%26WGS.md)
+
 
 
 
