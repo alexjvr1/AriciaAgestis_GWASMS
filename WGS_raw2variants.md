@@ -45,7 +45,7 @@ And call variants with the created [script](https://github.com/alexjvr1/AriciaAg
 
 * Sometimes jobs stall and run out of wall time. Check all the log files for numbers of variants called. Jobs that have failed will have an error message and can be rerun. 
 
-7. Concatenate all the bcf files
+7. Concatenate all the bcf files using this [script](https://github.com/alexjvr1/AriciaAgestis_GWASMS/blob/main/Concat.bcf.sh). 
 
 ```
 /newhome/aj18951/1a_Aricia_agestis_WGS_RawData_Oct2019/03_variants.WGS
@@ -53,6 +53,12 @@ And call variants with the created [script](https://github.com/alexjvr1/AriciaAg
 ```
 
 
+8. Filter the variants. This is described [here]().
 
+9. Use the filtered dataset to:
+
+  1) investigate the genetic variation surrounding the outlier loci in the GWAS/outlier analyses
+
+  2) Combine with ddRAD data to supplement the GWAS dataset. 
 
 
