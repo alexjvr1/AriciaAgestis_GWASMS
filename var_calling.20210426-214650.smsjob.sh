@@ -7,6 +7,7 @@
 #PBS -t 1-34
 #PBS -o /newhome/aj18951/1a_Aricia_agestis_WGS_RawData_Oct2019/03_variants.WGS/var_calling.20210428.smsjob.log
 
+# Regions file needs a header
 # Run in local directory
 
 cd $PBS_O_WORKDIR
