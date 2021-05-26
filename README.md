@@ -10,6 +10,8 @@ Population genomic analyses have found outlier loci associated with the host-pla
 A major question is if 
 
 
+The [Falconer Shiny app](https://github.com/CNSGenomics/falconer-shiny) is useful for illustrating the effects of polygenic traits on genetic variance and genetic variance components. [REF](https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1009548)
+
 ## Aims
 
 1) Establish if female host-plant preference from the established and new part of the range differs in common garden choice experiments. And determine if variance in host plant preference is reduced in the new part of the range, which would suggest specialisation and loss of their ability to choose Rockrose.
